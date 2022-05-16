@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "webpack-dev-server --mode development",
     "build": "webpack --mode prduction",
-    "test": "jest"
+    "test": "jest",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -31,7 +32,9 @@
     "babel-loader": "^8.2.5",
     "css-loader": "^6.7.1",
     "eslint-config-prettier": "^8.5.0",
+    "husky": "^8.0.1",
     "jest": "^28.1.0",
+    "lint-staged": "^12.4.1",
     "prettier": "^2.6.2",
     "react-test-renderer": "^18.1.0",
     "source-map-loader": "^3.0.1",
@@ -47,5 +50,13 @@
   "dependencies": {
     "react": "^18.1.0",
     "react-dom": "^18.1.0"
+  },
+  "lint-staged": {
+    "*.{js,css,md}": "prettier --write"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run pretty && npm run lint"
+    }
   }
 }
