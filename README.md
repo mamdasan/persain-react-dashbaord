@@ -15,3 +15,6 @@ Components’ output.
 
 Enzyme, created by Airbnb, adds some great additional utility methods for rendering a component (or multiple components)
 , finding elements, and interacting with elements
+
+used nivo for charts
+https://nivo.rocks/components/

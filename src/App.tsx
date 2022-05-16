@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Container } from "@mui/material";
 
 export interface HelloWorldProps {
   userName: string;
@@ -6,9 +7,5 @@ export interface HelloWorldProps {
 }
 
 export const App = (props: HelloWorldProps) => {
-  return (
-    <div>
-      Hi {props.userName} from React! Welcome to {props.lang}!
-    </div>
-  );
+  return <Container>{props.lang}</Container>;
 };
