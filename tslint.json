@@ -1,5 +1,9 @@
 // tslint.json
 {
-  "extends": ["tslint:recommended", "tslint-react", "prettier"],
+  "extends": [
+    "tslint:recommended",
+    "tslint-react",
+    "prettier"
+  ],
   "rules": {}
 }
