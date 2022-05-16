@@ -1,26 +1,40 @@
+const path = require('path');
+
 module.exports = {
-    entry: './src/index.js',
+    resolve: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx', ".json"]
+    },
+    entry: './src/index.tsx',
     output: {
         filename: 'bundle.js',
-        publicPath: "/"
+        path: path.resolve(__dirname, 'public/assets'),
+        publicPath: 'https://cdn.example.com/assets/',
+    },
+    module: {
+        rules: [
+            {
+                test: /\.tsx?$/,
+                use: 'ts-loader',
+                exclude: /node_modules/,
+            },
+            {
+                test: /\.(js|jsx)$/,
+                exclude: /node_modules/,
+                use: ['babel-loader']
+            },
+            {
+                test: /\.js$/,
+                use: ["source-map-loader"],
+                enforce: "pre"
+            },
+        ]
     },
     devServer: {
         client: {
             progress: true,
         },
-        static: {
-            publicPath: './dist'
-        },
-        open: true,
-        port: 3000
-    },
-    module: {
-        rules: [
-            {
-                test: /\.(js|jsx)$/,
-                exclude: /node_modules/,
-                use: ['babel-loader']
-            }
-        ]
+        // open: true,
+        port: 4000,
+        hot: 'only'
     },
 };
