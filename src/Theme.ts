@@ -12,7 +12,7 @@ const theme = createTheme({
       main: "#11cb5f",
     },
   },
-  direction: "rtl"
+  direction: "rtl",
 });
-
+const ok = 0;
 export default theme;
