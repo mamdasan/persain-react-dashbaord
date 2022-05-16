@@ -33,7 +33,7 @@ module.exports = {
         client: {
             progress: true,
         },
-        // open: true,
+        open: true,
         port: 4000,
         hot: 'only'
     },
