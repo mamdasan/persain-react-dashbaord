@@ -38,6 +38,7 @@ module.exports = {
     },
     open: true,
     port: 4000,
-    hot: "only",
+    // hot: 'only' has a bug in webpack 5. https://github.com/webpack-contrib/webpack-hot-middleware/issues/390
+    hot: true,
   },
 };

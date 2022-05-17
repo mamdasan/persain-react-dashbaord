@@ -1,5 +1,6 @@
 import * as React from "react";
-import { Container, Drawer } from "@mui/material";
+import { Container } from "@mui/material";
+import { PRDDrawer } from "./component/PRDDrawer";
 
 export interface HelloWorldProps {
   userName: string;
@@ -9,9 +10,18 @@ export interface HelloWorldProps {
 export const App = (props: HelloWorldProps) => {
   return (
     <Container>
-      <Drawer />
-      {props.lang} go ds as sadsad sad saf sdaf asdfasd
-      {props.userName}
+      <PRDDrawer
+        options={[
+          {
+            text: "hi",
+            url: "hiUrl",
+          },
+          {
+            text: "hi2",
+            url: "hiUrl2",
+          },
+        ]}
+      />
     </Container>
   );
 };
