@@ -14,5 +14,5 @@ const theme = createTheme({
   },
   direction: "rtl",
 });
-const ok = 0;
+
 export default theme;
