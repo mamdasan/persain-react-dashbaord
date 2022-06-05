@@ -5,5 +5,15 @@
     "tslint-react",
     "prettier"
   ],
-  "rules": {}
+  "rules": {
+    "no-console": {
+      "severity": "warning"
+    },
+    "indent": {
+      "options": [
+        "spaces",
+        2
+      ]
+    }
+  }
 }

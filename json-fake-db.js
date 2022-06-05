@@ -8,6 +8,8 @@ module.exports = () => {
     products: [],
     employees: [],
     sellers: [],
+    admins: [],
+    users: [],
   };
 
   for (let i = 1; i <= 1000; i++) {
@@ -21,7 +23,7 @@ module.exports = () => {
     });
   }
 
-  // Create 5 users
+  // Create 5 sellers
   for (let i = 1; i <= 5; i++) {
     data.sellers.push({
       id: i,
@@ -62,6 +64,36 @@ module.exports = () => {
       employeeId: faker.datatype.number({ min: 1, max: 20 }),
     });
   }
+
+  data.admins.push({
+    name: "superadmin",
+    password: "!23456789o",
+    avatar: faker.image.avatar(),
+  });
+
+  data.sellers.forEach((seller) => {
+    data.users.push({
+      access: 10,
+      password: faker.datatype.string(12),
+      ...seller,
+    });
+  });
+
+  data.employees.forEach((employee) => {
+    data.users.push({
+      access: 6,
+      password: faker.datatype.string(12),
+      ...employee,
+    });
+  });
+
+  data.admins.forEach((admin) => {
+    data.users.push({
+      access: 3,
+      password: faker.datatype.string(12),
+      ...admin,
+    });
+  });
 
   return data;
 };

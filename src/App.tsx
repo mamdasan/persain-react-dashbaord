@@ -8,6 +8,7 @@ export interface HelloWorldProps {
 }
 
 export const App = (props: HelloWorldProps) => {
+  console.log("process.env.API_ROOT");
   return (
     <Container>
       <PRDDrawer

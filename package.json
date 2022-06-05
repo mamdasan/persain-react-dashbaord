@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "description": "an editable persian react dashboard",
   "scripts": {
-    "dev": "webpack-dev-server --mode development --port 4000",
-    "dev-db": "json-server --watch json-fake-db.js --port 3000",
+    "dev": "concurrently \" webpack-dev-server --mode development --port 4000 \" \" json-server --watch json-fake-db.js --port 3000 \"",
     "build": "webpack --mode prduction",
     "test": "jest",
     "prepare": "husky install"
@@ -32,7 +31,9 @@
     "@types/react-dom": "^18.0.4",
     "babel-jest": "^28.1.0",
     "babel-loader": "^8.2.5",
+    "concurrently": "^7.2.1",
     "css-loader": "^6.7.1",
+    "dotenv-webpack": "^7.1.0",
     "eslint-config-prettier": "^8.5.0",
     "husky": "^8.0.1",
     "jest": "^28.1.0",
@@ -58,6 +59,7 @@
     "@nivo/core": "^0.79.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-redux": "^8.0.2",
     "react-router-dom": "^6.3.0"
   },
   "lint-staged": {

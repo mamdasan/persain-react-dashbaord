@@ -7,12 +7,9 @@
     "preserveConstEnums": true,
     "removeComments": true,
     "sourceMap": true,
-    "target": "es5",
+    "target": "es5"
   },
   "rules": {
     "no-console": false
   }
-  //  "include": [
-  //    "src/components/index.tsx"
-  //  ]
 }

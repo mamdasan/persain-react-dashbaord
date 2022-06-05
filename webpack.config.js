@@ -1,15 +1,21 @@
 const path = require("path");
+const Dotenv = require("dotenv-webpack");
 
 module.exports = {
+  plugins: [new Dotenv()],
+
   resolve: {
     extensions: [".js", ".jsx", ".ts", ".tsx", ".json"],
   },
+
   entry: "./src/index.tsx",
+
   output: {
     filename: "bundle.js",
     path: path.resolve(__dirname, "public/assets"),
     publicPath: "http://localhost:4000/assets/",
   },
+
   module: {
     rules: [
       {
@@ -29,6 +35,7 @@ module.exports = {
       },
     ],
   },
+
   devServer: {
     static: {
       directory: path.join(__dirname, "public"),
